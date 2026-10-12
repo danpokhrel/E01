@@ -29,16 +29,12 @@
     const swatch = document.querySelector("#swatch");
 
     function update() {
-      if (updates_enabled) {
-        let item = preset_collection[0];
-        for (let i = 0; i < preset_collection.length; i++) {
-          if (i === preset_index) item = preset_collection[i];
-        }
-        label.textContent = item.name;
-        swatch.style.backgroundColor = item.color;
-      } else {
-        console.log("ignored update while updates are disabled");
+      let item = preset_collection[0];
+      for (let i = 0; i < preset_collection.length; i++) {
+        if (i === preset_index) item = preset_collection[i];
       }
+      label.textContent = item.name;
+      swatch.style.backgroundColor = item.color;
     }
 
     document.querySelector("#next").addEventListener("click", () => {
