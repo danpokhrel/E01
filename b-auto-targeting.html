@@ -40,9 +40,8 @@
       let target = null;
       // Pick the living enemy with the greatest health.
       for (const enemy of enemies) {
-        // Exclude dead enemies
         if (enemy.health > 0) {
-          // Switch to new enemy if it's first or has higher health
+          // Switch to new enemy if it's first or has higher/equal health
           if (!target || target.health <= enemy.health){
             target = enemy;
           }
